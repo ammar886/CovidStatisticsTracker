@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="covidStatsTrackerDataSet" targetNamespace="http://tempuri.org/covidStatsTrackerDataSet.xsd" xmlns:mstns="http://tempuri.org/covidStatsTrackerDataSet.xsd" xmlns="http://tempuri.org/covidStatsTrackerDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="covidStatsTrackerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="covidStatsTrackerConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CovidStatisticsTracker.Properties.Settings.GlobalReference.Default.covidStatsTrackerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cityWiseCasesTableAdapter" GeneratorDataComponentClassName="cityWiseCasesTableAdapter" Name="cityWiseCases" UserDataComponentName="cityWiseCasesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="covidStatsTrackerConnectionString (Settings)" DbObjectName="covidStatsTracker.dbo.cityWiseCases" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT cityName, casesRecorded FROM dbo.cityWiseCases</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cityName" DataSetColumn="cityName" />
+              <Mapping SourceColumn="casesRecorded" DataSetColumn="casesRecorded" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="covidStatsTrackerDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="covidStatsTrackerDataSet" msprop:Generator_DataSetName="covidStatsTrackerDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cityWiseCases" msprop:Generator_RowEvHandlerName="cityWiseCasesRowChangeEventHandler" msprop:Generator_RowDeletedName="cityWiseCasesRowDeleted" msprop:Generator_RowDeletingName="cityWiseCasesRowDeleting" msprop:Generator_RowEvArgName="cityWiseCasesRowChangeEvent" msprop:Generator_TablePropName="cityWiseCases" msprop:Generator_RowChangedName="cityWiseCasesRowChanged" msprop:Generator_RowChangingName="cityWiseCasesRowChanging" msprop:Generator_TableClassName="cityWiseCasesDataTable" msprop:Generator_RowClassName="cityWiseCasesRow" msprop:Generator_TableVarName="tablecityWiseCases" msprop:Generator_UserTableName="cityWiseCases">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cityName" msprop:Generator_ColumnPropNameInRow="cityName" msprop:Generator_ColumnPropNameInTable="cityNameColumn" msprop:Generator_ColumnVarNameInTable="columncityName" msprop:Generator_UserColumnName="cityName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="casesRecorded" msprop:Generator_ColumnPropNameInRow="casesRecorded" msprop:Generator_ColumnPropNameInTable="casesRecordedColumn" msprop:Generator_ColumnVarNameInTable="columncasesRecorded" msprop:Generator_UserColumnName="casesRecorded" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
